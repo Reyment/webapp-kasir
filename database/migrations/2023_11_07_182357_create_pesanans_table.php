@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pesanans', function (Blueprint $table) {
-            $table->id();
-            $table->integer('cust_id');
-            $table->date('waktu_pesan');
-            $table->integer('jumlah_pesan');
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('pesanans')) {
+            Schema::create('pesanans', function (Blueprint $table) {
+                $table->id();
+                $table->integer('cust_id');
+                $table->date('waktu_pesan');
+                $table->integer('jumlah_pesan');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class PesananDetail extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'id_order',
+        'id_produk',
+        'jumlah',
+        'sub_total',       
+    ];
 }
